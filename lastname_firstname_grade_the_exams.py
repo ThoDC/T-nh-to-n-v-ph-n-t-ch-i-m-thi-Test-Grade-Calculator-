@@ -1,4 +1,4 @@
-# task1
+# connect dataset
 # nhập tên của một tệp và truy cập đọc
 import re
 
@@ -10,7 +10,7 @@ try:
 except:
     print('File cannot be found.')
     exit()
-# task2
+# Quét từng dòng của câu trả lời bài thi để tìm dữ liệu hợp lệ và cung cấp báo cáo tương ứng
 print('*** ANALYZING ***')
 true_line = 0
 false_line = 0
@@ -37,7 +37,7 @@ print('*** REPORT ***')
 print('Total valid lines of data:{}'.format(true_line),
       'Total invalid lines of data:{}'.format(false_line),
       sep='\n')
-# task3
+# Chấm điểm từng bài thi dựa trên tiêu chí đánh giá (rubric) được cung cấp và báo cáo
 answer_key = "B,A,D,D,C,B,D,A,C,C,D,B,A,B,A,C,B,D,A,C,A,A,B,D,D"
 ans_key = answer_key.split(',')
 so_hs = true_line
@@ -124,7 +124,7 @@ print('Total student of high scores: {}'.format(high_grade),
       'Question that most people answer incorrectly: {}'.format(str_wrong),
       sep = '\n'
       )
-#task4
+#lưu kết quả vào file tương ứng
 name = (fname.split('.'))[0]
 with open(name+'_grades.txt', 'w') as fw:
     for msv, score in dict_grade.items():
